@@ -75,16 +75,6 @@
   line-height: 1.4;
 }
 
-.stage__melt {
-  position: absolute;
-  inset: auto 0 0;
-  height: 100%;
-  /* Passing through pale ruby: fading dark ruby straight to white turns it muddy grey. */
-  background: linear-gradient(to bottom, rgb(245 140 166 / 0), rgb(251 234 239 / 0.92) 65%, var(--bg) 100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* The scroll scene: script adds this class, and drives the variables below. */
 .stage-live .stage {
   height: 340vh;
@@ -117,13 +107,9 @@
   opacity: var(--field-in, 0);
 }
 
-.stage-live .stage__melt {
-  opacity: var(--melt, 0);
-}
-
 .stage-live .stage__copy {
   /* Until the text below appears, the headline alone sits on the true centre of the screen. */
-  transform: translateY(calc((1 - var(--after-in, 0)) * var(--lift, 0px) + var(--melt, 0) * -14vh));
+  transform: translateY(calc((1 - var(--after-in, 0)) * var(--lift, 0px)));
 }
 
 .stage__beat-one {

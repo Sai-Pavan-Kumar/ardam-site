@@ -22,6 +22,29 @@
   outline-color: var(--on-ruby);
 }
 
+.footer__maker {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  color: var(--on-ruby);
+  font-size: var(--t-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.footer__maker a {
+  text-decoration: underline;
+}
+
+.footer__humans {
+  color: var(--on-ruby-soft);
+  font-size: var(--t-small);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
 .footer__top {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -55,49 +78,42 @@
   font-weight: 600;
 }
 
+/* Rights and credits share one row; the credit text opens below them at full width. */
 .footer__base {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px 32px;
+  display: grid;
   margin-top: clamp(40px, 5vw, 72px);
   font-size: var(--t-small);
 }
 
-.footer__made {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: rgb(255 255 255 / 0.08);
+.footer__rights,
+.footer__credits {
+  grid-area: 1 / 1;
 }
 
-.footer__made a {
+.footer__rights {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   min-height: 44px;
-}
-
-.footer__heart {
-  width: 16px;
-  height: 16px;
-  fill: var(--ruby-300);
 }
 
 .footer__credits {
-  margin-top: 16px;
-  font-size: var(--t-small);
   line-height: 1.5;
 }
 
 .footer__credits summary {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: fit-content;
   min-height: 44px;
+  margin-left: auto;
   cursor: pointer;
+}
+
+.footer__credits p {
+  margin-top: 8px;
 }
 
 .footer__credits a {
@@ -137,5 +153,15 @@
 
   .footer__pitch {
     grid-column: 1 / -1;
+  }
+
+  /* The two no longer fit side by side on a phone. */
+  .footer__rights,
+  .footer__credits {
+    grid-area: auto;
+  }
+
+  .footer__credits summary {
+    margin-left: 0;
   }
 }

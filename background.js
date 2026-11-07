@@ -50,7 +50,6 @@ function playStage() {
     stage.style.setProperty("--field-in", smooth(0.46, 0.6, progress));
     stage.style.setProperty("--two-in", smooth(0.58, 0.66, progress));
     stage.style.setProperty("--after-in", smooth(0.63, 0.72, progress));
-    stage.style.setProperty("--melt", smooth(0.82, 1, progress));
     nav.classList.toggle("is-on", progress > NAV_VISIBLE_AT);
     nav.classList.toggle("is-solid", progress > NAV_SOLID_AT);
   };

@@ -19,11 +19,11 @@
     <link rel="preload" href="assets/fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="stylesheet" href="style.css?v=2" />
-    <link rel="stylesheet" href="sections.css" />
+    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="sections.css?v=3" />
     <link rel="stylesheet" href="sample.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="motion.css" />
+    <link rel="stylesheet" href="footer.css?v=3" />
+    <link rel="stylesheet" href="motion.css?v=3" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -49,7 +49,6 @@
         <div class="stage__pin">
           <canvas class="stage__light" aria-hidden="true"></canvas>
           <div class="field" data-field="hero"></div>
-          <div class="stage__melt"></div>
           <div class="stage__copy">
             <h1 id="stage-title" class="stage__headline">
               <span class="stage__beat-one">English article not making sense?</span>
@@ -76,8 +75,8 @@
           <div class="window__bar">
             <span class="window__address" aria-hidden="true">engineering-blog.example/delivery-app-failure</span>
             <div class="sample__switch" role="group" aria-label="Sample language">
-              <button type="button" data-show="en" aria-pressed="false">English</button>
-              <button type="button" data-show="te" aria-pressed="true">Tenglish</button>
+              <button type="button" data-show="en" aria-pressed="true">English</button>
+              <button type="button" data-show="te" aria-pressed="false">Tenglish</button>
             </div>
           </div>
           <div class="window__page">
@@ -352,6 +351,10 @@
 
     <footer class="footer">
       <div class="wrap">
+        <p class="footer__maker">
+          <span>Made by <a href="https://thesurfboard.in">The SurfBoard</a></span>
+          <span class="footer__humans">Built for humans</span>
+        </p>
         <div class="footer__top">
           <p class="footer__pitch">Any English article, in the Tenglish you already speak.</p>
           <nav aria-label="On this page">
@@ -370,16 +373,8 @@
           </nav>
         </div>
         <div class="footer__base">
-          <span class="footer__made">
-            Made with
-            <svg class="footer__heart" viewBox="0 0 24 24" role="img" aria-label="love">
-              <path d="M12 21s-8.5-5.2-10.4-10.3C.3 6.9 2.6 3.5 6.2 3.5c2.3 0 4.3 1.2 5.8 3.4 1.5-2.2 3.5-3.4 5.8-3.4 3.6 0 5.9 3.4 4.6 7.2C20.500 15.800 12 21 12 21z" />
-            </svg>
-            by <a href="https://thesurfboard.in">The SurfBoard</a>
-          </span>
-          <span>© 2026 Ardam. All rights reserved.</span>
-        </div>
-        <details class="footer__credits">
+          <span class="footer__rights">© 2026 Ardam. All rights reserved.</span>
+          <details class="footer__credits">
           <summary>Picture credits</summary>
           <p>Pictures, used unaltered apart from cropping:
         <a href="https://commons.wikimedia.org/w/index.php?curid=73907096"
@@ -401,12 +396,13 @@
         <a href="https://creativecommons.org/licenses/by-sa/4.0/"
           >CC BY-SA 4.0</a
         >, via Wikimedia Commons.</p>
-        </details>
+          </details>
+        </div>
       </div>
       <p class="footer__mark" aria-hidden="true">Ardam</p>
     </footer>
     <div class="tip" role="tooltip" hidden></div>
-    <script src="site.js"></script>
-    <script type="module" src="background.js"></script>
+    <script src="site.js?v=3"></script>
+    <script type="module" src="background.js?v=3"></script>
   </body>
 </html>

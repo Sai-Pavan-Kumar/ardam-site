@@ -3,8 +3,9 @@ main > * + * {
   margin-top: var(--gap);
 }
 
+/* The ruby now ends on a clean edge, so the first section needs real air below it. */
 .stage + * {
-  margin-top: clamp(16px, 2vw, 32px);
+  margin-top: clamp(64px, 8vw, 112px);
 }
 
 .section__head {

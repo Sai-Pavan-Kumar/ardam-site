@@ -17,7 +17,8 @@ function setUpSwitch() {
   buttons.forEach((button) => {
     button.addEventListener("click", () => show(button.dataset.show));
   });
-  show("te");
+  // Readers see the English first, so the switch to Tenglish is the moment that sells it.
+  show("en");
 }
 
 const tip = document.querySelector(".tip");
