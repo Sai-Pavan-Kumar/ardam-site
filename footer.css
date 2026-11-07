@@ -2,7 +2,7 @@
 .footer {
   margin-top: clamp(48px, 6vw, 96px);
   overflow: hidden;
-  padding-top: clamp(56px, 7vw, 96px);
+  padding-block: clamp(56px, 7vw, 96px) clamp(32px, 4vw, 48px);
   background: var(--ruby-950);
   color: var(--on-ruby-soft);
   font-size: var(--t-body);
@@ -22,35 +22,26 @@
   outline-color: var(--on-ruby);
 }
 
-/* One line at every width, so the size follows the screen on phones. */
-.footer__maker {
-  margin-bottom: clamp(48px, 6vw, 80px);
-  color: var(--on-ruby);
-  font-size: clamp(14px, 4.4vw, 24px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.footer__maker a,
-.footer__maker a:hover {
-  text-decoration: none;
-}
-
-.footer__top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px 32px;
-}
-
+/* One centred column: name, promise, details, then who made it. */
 .footer__pitch {
-  max-width: 14em;
+  max-width: 22em;
+  margin: clamp(32px, 4vw, 48px) auto 0;
   color: var(--on-ruby);
   font-size: var(--t-h3);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.15;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 220px));
+  justify-content: center;
+  gap: 32px;
+  margin-top: clamp(40px, 5vw, 64px);
+  text-align: center;
 }
 
 .footer__title {
@@ -71,24 +62,17 @@
   font-weight: 600;
 }
 
-/* Rights and credits share one row; the credit text opens below them at full width. */
 .footer__base {
   display: grid;
-  margin-top: clamp(40px, 5vw, 72px);
+  justify-items: center;
+  margin-top: clamp(40px, 5vw, 64px);
   font-size: var(--t-small);
-}
-
-.footer__rights,
-.footer__credits {
-  grid-area: 1 / 1;
+  text-align: center;
 }
 
 .footer__rights {
-  position: relative;
-  z-index: 1;
   display: inline-flex;
   align-items: center;
-  justify-self: start;
   min-height: 44px;
 }
 
@@ -101,21 +85,38 @@
   align-items: center;
   width: fit-content;
   min-height: 44px;
-  margin-left: auto;
+  margin-inline: auto;
   cursor: pointer;
 }
 
 .footer__credits p {
-  margin-top: 8px;
+  max-width: 70ch;
+  margin: 8px auto 0;
 }
 
 .footer__credits a {
   text-decoration: underline;
 }
 
+/* One line at every width, so the size follows the screen on phones. */
+.footer__maker {
+  margin-top: clamp(32px, 4vw, 48px);
+  color: var(--on-ruby);
+  font-size: clamp(14px, 4.4vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.footer__maker a,
+.footer__maker a:hover {
+  text-decoration: none;
+}
+
 /* The name sets in the same moving ruby as the scenes above it. */
 .footer__mark {
-  margin: clamp(24px, 3vw, 40px) 0 -0.09em;
+  margin: 0;
   background: linear-gradient(100deg, var(--ruby-800), var(--ruby-500), var(--ruby-300), var(--ruby-500), var(--ruby-800));
   background-size: 300% 100%;
   background-clip: text;
@@ -136,25 +137,5 @@
   }
   to {
     background-position: 100% 50%;
-  }
-}
-
-@media (max-width: 760px) {
-  .footer__top {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer__pitch {
-    grid-column: 1 / -1;
-  }
-
-  /* The two no longer fit side by side on a phone. */
-  .footer__rights,
-  .footer__credits {
-    grid-area: auto;
-  }
-
-  .footer__credits summary {
-    margin-left: 0;
   }
 }
