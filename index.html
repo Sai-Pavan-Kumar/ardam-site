@@ -19,10 +19,10 @@
     <link rel="preload" href="assets/fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
     <link rel="stylesheet" href="sections.css?v=3" />
     <link rel="stylesheet" href="sample.css" />
-    <link rel="stylesheet" href="footer.css?v=5" />
+    <link rel="stylesheet" href="footer.css?v=8" />
     <link rel="stylesheet" href="motion.css?v=3" />
     <script type="application/ld+json">
       {
@@ -353,22 +353,12 @@
       <p class="footer__mark" aria-hidden="true">Ardam</p>
       <div class="wrap">
         <p class="footer__pitch">English article to Tenglish.</p>
-        <div class="footer__top">
-          <nav aria-label="On this page">
-            <p class="footer__title">Ardam</p>
-            <ul class="footer__links">
-              <li><a href="#example">See the example</a></li>
-              <li><a href="#faq">Fair questions</a></li>
-            </ul>
-          </nav>
-          <nav aria-label="Help and legal">
-            <p class="footer__title">Help</p>
-            <ul class="footer__links">
-              <li><a href="https://github.com/Sai-Pavan-Kumar/ardam-site/issues">Open an issue</a></li>
-              <li><a href="privacy.html">Privacy policy</a></li>
-            </ul>
-          </nav>
-        </div>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#example">See the example</a>
+          <a href="#faq">Fair questions</a>
+          <a href="https://github.com/Sai-Pavan-Kumar/ardam-site/issues">Open an issue</a>
+          <a href="privacy.html">Privacy policy</a>
+        </nav>
         <div class="footer__base">
           <span class="footer__rights">© 2026 Ardam. All rights reserved.</span>
           <details class="footer__credits">
@@ -394,12 +384,20 @@
           >CC BY-SA 4.0</a
         >, via Wikimedia Commons.</p>
           </details>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/the_surfboard" aria-label="The SurfBoard on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle class="footer__social-dot" cx="17.5" cy="6.5" r="1" /></svg>
+            </a>
+            <a href="https://www.youtube.com/@the_surfboard?sub_confirmation=1" aria-label="The SurfBoard on YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" /><path d="M10 9l5 3-5 3z" /></svg>
+            </a>
+          </div>
         </div>
         <p class="footer__maker">Made by <a href="https://thesurfboard.in">The SurfBoard</a>. Built for humans.</p>
       </div>
     </footer>
     <div class="tip" role="tooltip" hidden></div>
-    <script src="site.js?v=3"></script>
+    <script src="site.js?v=4"></script>
     <script type="module" src="background.js?v=3"></script>
   </body>
 </html>

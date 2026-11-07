@@ -78,3 +78,10 @@ function setUpReveals() {
 setUpSwitch();
 setUpTerms();
 setUpReveals();
+
+// The stage script owns when the nav appears; this only clears it for the footer.
+const siteNav = document.querySelector(".nav");
+new IntersectionObserver(([footer]) => {
+  siteNav.classList.toggle("is-away", footer.isIntersecting);
+  siteNav.inert = footer.isIntersecting;
+}).observe(document.querySelector(".footer"));

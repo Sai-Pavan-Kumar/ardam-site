@@ -199,6 +199,13 @@ a {
   transform: translateY(-12px);
 }
 
+/* The footer is the last scene; a bar over it only hides the name. */
+.nav.is-away {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+}
+
 .nav.is-solid {
   background: rgb(255 255 255 / 0.92);
   backdrop-filter: blur(16px);
