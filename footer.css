@@ -22,27 +22,20 @@
   outline-color: var(--on-ruby);
 }
 
+/* One line at every width, so the size follows the screen on phones. */
 .footer__maker {
-  display: grid;
-  justify-items: center;
-  gap: 4px;
   margin-bottom: clamp(48px, 6vw, 80px);
   color: var(--on-ruby);
-  font-size: var(--t-title);
+  font-size: clamp(14px, 4.4vw, 24px);
   font-weight: 700;
   letter-spacing: -0.02em;
   text-align: center;
+  white-space: nowrap;
 }
 
-.footer__maker a {
-  text-decoration: underline;
-}
-
-.footer__humans {
-  color: var(--on-ruby-soft);
-  font-size: var(--t-small);
-  font-weight: 400;
-  letter-spacing: 0;
+.footer__maker a,
+.footer__maker a:hover {
+  text-decoration: none;
 }
 
 .footer__top {
