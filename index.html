@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ardam: Read any article in Tenglish</title>
+    <meta
+      name="description"
+      content="Ardam is a Chrome extension that turns hard English articles into easy Tenglish on the same page, with meanings on hover. It works with your own AI key."
+    />
+    <link rel="canonical" href="https://ardam.thesurfboard.in/" />
+    <meta property="og:title" content="Ardam: Read any article in Tenglish" />
+    <meta
+      property="og:description"
+      content="English article not making sense? Read it in natural Tenglish on the same page, in one click. Ardam doesn’t teach English."
+    />
+    <meta property="og:url" content="https://ardam.thesurfboard.in/" />
+    <meta property="og:type" content="website" />
+    <link rel="preload" href="assets/fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sections.css" />
+    <link rel="stylesheet" href="sample.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="motion.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Ardam",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Chrome",
+        "description": "Chrome extension that turns web articles into easy Tenglish on the same page, using the reader's own AI key.",
+        "url": "https://ardam.thesurfboard.in/"
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__brand" href="/">
+        <svg class="nav__logo" viewBox="240 140 810 900" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M330 395C330 345 385 265 465 225C525 197 590 185 660 185C860 185 1005 300 1005 490V910C1005 950 985 975 945 975H870C830 975 810 950 810 905V858C750 945 665 1000 560 1000C400 1000 287 880 287 745C287 600 420 493 585 493C650 493 692 515 692 560C692 600 660 625 610 648C550 672 512 705 512 762C512 778 514 793 519 808C545 797 580 797 608 810C625 750 650 725 700 700C775 662 824 610 824 530C824 420 745 348 640 348C575 348 525 375 487 422C465 452 440 462 408 462C365 462 330 435 330 395ZM561 825A67 67 0 1 0 561 959A67 67 0 1 0 561 825Z" /></svg>
+        Ardam
+      </a>
+      <a class="button" href="#example">See the example</a>
+    </nav>
+    <main>
+      <section class="stage" aria-labelledby="stage-title">
+        <div class="stage__pin">
+          <canvas class="stage__light" aria-hidden="true"></canvas>
+          <div class="field" data-field="hero"></div>
+          <div class="stage__melt"></div>
+          <div class="stage__copy">
+            <h1 id="stage-title" class="stage__headline">
+              <span class="stage__beat-one">English article not making sense?</span>
+              <span class="stage__beat-two">English article ardam avvatleda?</span>
+            </h1>
+            <div class="stage__after">
+              <p class="stage__lead">
+                <strong>This is Ardam.</strong> It turns any English article into natural Tenglish, right on the same page. It doesn’t teach English. Chrome extension, coming soon.
+              </p>
+              <a class="button button--light" href="#example">See the example</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="example" class="section wrap" aria-labelledby="example-title">
+        <div class="section__head reveal">
+          <h2 id="example-title">Same page. Your language.</h2>
+          <p>
+            Switch this paragraph, then point at a dotted word. On a phone, tap it. We wrote this example by hand to show the style Ardam aims for.
+          </p>
+        </div>
+        <article class="window reveal" data-ui>
+          <div class="window__bar">
+            <span class="window__address" aria-hidden="true">engineering-blog.example/delivery-app-failure</span>
+            <div class="sample__switch" role="group" aria-label="Sample language">
+              <button type="button" data-show="en" aria-pressed="false">English</button>
+              <button type="button" data-show="te" aria-pressed="true">Tenglish</button>
+            </div>
+          </div>
+          <div class="window__page">
+            <h3 class="sample__title">How a delivery app survives failure</h3>
+            <div class="sample__text" data-lang="en">
+            <p>
+              Event sourcing stores every change as an immutable log, so a
+              service can rebuild its state after a crash. When one order spans
+              several services, the saga pattern undoes the finished steps if a
+              later step fails.
+            </p>
+          </div>
+            <div class="sample__text" data-lang="te">
+            <p>
+              <button
+                type="button"
+                class="term"
+                data-meaning="Data ni overwrite cheyakunda, jarigina prathi change ni varusaga save chese method."
+              >
+                Event sourcing</button
+              > lo prathi change ni oka
+              <button
+                type="button"
+                class="term"
+                data-meaning="Okasari raasaka maarchaleni records list."
+              >
+                immutable log</button
+              > la store chestharu. Anduke crash ayina taruvatha kuda service
+              thana state ni malli build cheskogaladu. Oka order chala services
+              meedha nadisthe, tarvatha step fail ayinappudu
+              <button
+                type="button"
+                class="term"
+                data-meaning="Pedda pani ni chinna steps ga chesi, madhyalo fail ayithe aipoyina steps ni venakki tippe method."
+              >
+                saga pattern</button
+              > aipoyina steps ni undo chesthundi.
+            </p>
+          </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section wrap" aria-labelledby="words-title">
+        <div class="section__head reveal">
+          <h2 id="words-title">Not just translated.</h2>
+          <p>
+            Formal Telugu can be as hard as the English you started with. Ardam aims for how you actually talk: Telugu sentences in English letters, with technical words left alone, because your docs, interviews and teammates all use them.
+          </p>
+        </div>
+        <div class="words__pair" aria-hidden="true">
+          <span class="words__hard">Hard</span>
+          <span class="words__easy">Easy</span>
+        </div>
+      </section>
+
+      <figure class="band">
+        <img
+          src="assets/16th-century-jaiminiya-mimamsa-sutra-bhasya-sanskrit.jpg"
+          width="1920"
+          height="714"
+          loading="lazy"
+          alt="A 16th-century palm-leaf manuscript written in Telugu script"
+        />
+        <figcaption>
+          A 16th-century manuscript in Telugu script, from Andhra Pradesh.
+        </figcaption>
+      </figure>
+
+      <section class="section wrap" aria-labelledby="compare-title">
+        <div class="section__head reveal">
+          <h2 id="compare-title">Why not just paste it?</h2>
+        </div>
+        <div class="table-panel reveal">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col"><span class="visually-hidden">Need</span></th>
+                <th scope="col" class="featured">Ardam</th>
+                <th scope="col">Pasting into a chatbot</th>
+                <th scope="col">A regular page translator</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Stays on the page</th>
+                <td class="featured">Yes, in place</td>
+                <td>No, you copy each part</td>
+                <td>Yes, in place</td>
+              </tr>
+              <tr>
+                <th scope="row">Written in Tenglish</th>
+                <td class="featured">Always</td>
+                <td>If you ask each time</td>
+                <td>Usually Telugu script</td>
+              </tr>
+              <tr>
+                <th scope="row">Technical words kept</th>
+                <td class="featured">Built into the rules</td>
+                <td>If you ask each time</td>
+                <td>Not its focus</td>
+              </tr>
+              <tr>
+                <th scope="row">Meanings on hover</th>
+                <td class="featured">Yes</td>
+                <td>Ask separately</td>
+                <td>Not its focus</td>
+              </tr>
+              <tr>
+                <th scope="row">Links keep working</th>
+                <td class="featured">Yes</td>
+                <td>You leave the page</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Back to the original</th>
+                <td class="featured">One click</td>
+                <td>Switch tabs</td>
+                <td>One click</td>
+              </tr>
+              <tr>
+                <th scope="row">PDFs</th>
+                <td class="featured">Not yet</td>
+                <td>Yes, by upload</td>
+                <td>Varies</td>
+              </tr>
+              <tr>
+                <th scope="row">What it costs</th>
+                <td class="featured">Free, plus your AI provider</td>
+                <td>Depends on your plan</td>
+                <td>Usually free</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="wrap" aria-labelledby="steps-title">
+        <div class="section__head reveal">
+          <h2 id="steps-title">Four steps. One click.</h2>
+        </div>
+        <ol class="steps__list">
+          <li class="reveal">
+            <h3>First, add your key.</h3>
+            <p>Gemini, OpenAI, Anthropic or any OpenAI-compatible provider.</p>
+          </li>
+          <li class="reveal">
+            <h3>Then open an article.</h3>
+            <p>Docs, blogs, system design posts: anything you can read.</p>
+          </li>
+          <li class="reveal">
+            <h3>Click once to convert.</h3>
+            <p>Menus, buttons and code blocks stay as they are.</p>
+          </li>
+          <li class="reveal">
+            <h3>Now it makes sense.</h3>
+            <p>Point at a hard word for its meaning, or go back to English.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section wrap" aria-labelledby="stone-title">
+        <div class="section__head reveal">
+          <h2 id="stone-title">Understand it in your own language.</h2>
+          <p>
+            Telugu has carried knowledge on stone and palm leaf for centuries. A browser is one more place for it. Read hard ideas in the language you think in, then use them in any language you need.
+          </p>
+        </div>
+        <div class="stone">
+        <figure class="stone__big">
+          <img
+            src="assets/ancient-telugu-inscription-found-at-srimukhalingam-temple.jpg"
+            width="1920"
+            height="1440"
+            loading="lazy"
+            alt="Telugu letters carved into temple stone at Srimukhalingam"
+          />
+          <figcaption>Telugu inscription, Srimukhalingam Temple.</figcaption>
+        </figure>
+        <div class="stone__side reveal">
+          <figure>
+            <img
+              src="assets/vedanta-sara-manuscript-page-4-recto-sanskrit.jpg"
+              width="1920"
+              height="533"
+              loading="lazy"
+              alt="A long manuscript page written in Telugu script"
+            />
+            <figcaption>Vedanta Sara manuscript, in Telugu script.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/telugu-inscription-at-srikakulam-krishna-district-in.jpg"
+              width="1920"
+              height="1079"
+              loading="lazy"
+              alt="A Telugu stone inscription at Srikakulam, Krishna District"
+            />
+            <figcaption>Telugu inscription at Srikakulam.</figcaption>
+          </figure>
+        </div>
+      </div>
+      </section>
+
+      <section id="faq" class="wrap" aria-labelledby="faq-title">
+        <div class="section__head reveal">
+          <h2 id="faq-title">Fair questions</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Does it teach English?</summary>
+            <p>No. It helps you read the article in Tenglish.</p>
+          </details>
+          <details>
+            <summary>What is Tenglish?</summary>
+            <p>Telugu written in English letters, mixed with everyday English words. It's how many of us already text.</p>
+          </details>
+          <details>
+            <summary>Is it word-for-word translation?</summary>
+            <p>No. Ardam rewrites sentences so they sound natural, while its rules tell the AI not to add or remove facts.</p>
+          </details>
+          <details>
+            <summary>Can the AI get something wrong?</summary>
+            <p>Yes. AI can make mistakes, so check anything important against the original. It's one click away.</p>
+          </details>
+          <details>
+            <summary>Why do I need my own key?</summary>
+            <p>Ardam has no server, so you choose the provider and only you pay them, if at all. Some providers offer free limits.</p>
+          </details>
+          <details>
+            <summary>Where does my key go?</summary>
+            <p>It stays in your browser and is sent only to the provider you picked. It isn't encrypted on your device, so avoid shared computers.</p>
+          </details>
+          <details>
+            <summary>What does the provider see?</summary>
+            <p>The text of the page you convert. Don't convert private pages unless you're fine with your provider seeing them.</p>
+          </details>
+          <details>
+            <summary>Does Ardam cost money?</summary>
+            <p>The extension is free. Long pages use more of your provider's limit.</p>
+          </details>
+          <details>
+            <summary>Does it work on every site?</summary>
+            <p>Most article pages should work, but sites are built differently, so some may convert only part of the page or look a little off.</p>
+          </details>
+          <details>
+            <summary>Does it work on PDFs?</summary>
+            <p>Not yet. Web pages come first.</p>
+          </details>
+          <details>
+            <summary>What about other languages?</summary>
+            <p>Tenglish first, so we can get it right. Others may follow.</p>
+          </details>
+          <details>
+            <summary>Can I install it today?</summary>
+            <p>Not yet. It's being tested before it goes to the Chrome Web Store.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="wrap section">
+        <section class="close" aria-labelledby="close-title">
+          <div class="field" data-field="close"></div>
+          <div class="close__body">
+            <h2 id="close-title">Ardam ayindha?</h2>
+            <p>The extension arrives on the Chrome Web Store soon.</p>
+            <a class="button button--light" href="#example">See the example</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__top">
+          <p class="footer__pitch">Any English article, in the Tenglish you already speak.</p>
+          <nav aria-label="On this page">
+            <p class="footer__title">Ardam</p>
+            <ul class="footer__links">
+              <li><a href="#example">See the example</a></li>
+              <li><a href="#faq">Fair questions</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Help and legal">
+            <p class="footer__title">Help</p>
+            <ul class="footer__links">
+              <li><a href="https://github.com/Sai-Pavan-Kumar/ardam-site/issues">Open an issue</a></li>
+              <li><a href="privacy.html">Privacy policy</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__base">
+          <span class="footer__made">
+            Made with
+            <svg class="footer__heart" viewBox="0 0 24 24" role="img" aria-label="love">
+              <path d="M12 21s-8.5-5.2-10.4-10.3C.3 6.9 2.6 3.5 6.2 3.5c2.3 0 4.3 1.2 5.8 3.4 1.5-2.2 3.5-3.4 5.8-3.4 3.6 0 5.9 3.4 4.6 7.2C20.500 15.800 12 21 12 21z" />
+            </svg>
+            by <a href="https://thesurfboard.in">The SurfBoard</a>
+          </span>
+          <span>© 2026 Ardam. All rights reserved.</span>
+        </div>
+        <details class="footer__credits">
+          <summary>Picture credits</summary>
+          <p>Pictures, used unaltered apart from cropping:
+        <a href="https://commons.wikimedia.org/w/index.php?curid=73907096"
+          >“16th-century Jaiminiya Mimamsa Sutra Bhasya”</a
+        >
+        and
+        <a href="https://commons.wikimedia.org/w/index.php?curid=73907104"
+          >“Vedanta Sara manuscript, page 4 recto”</a
+        >
+        by Ms Sarah Welch;
+        <a href="https://commons.wikimedia.org/w/index.php?curid=72836301"
+          >“Ancient Telugu Inscription found at Srimukhalingam Temple”</a
+        >
+        by Vrpothina;
+        <a href="https://commons.wikimedia.org/w/index.php?curid=37498191"
+          >“Telugu inscription at Srikakulam”</a
+        >
+        by Srikar Kashyap. All
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+          >CC BY-SA 4.0</a
+        >, via Wikimedia Commons.</p>
+        </details>
+      </div>
+      <p class="footer__mark" aria-hidden="true">Ardam</p>
+    </footer>
+    <div class="tip" role="tooltip" hidden></div>
+    <script src="site.js"></script>
+    <script type="module" src="background.js"></script>
+  </body>
+</html>

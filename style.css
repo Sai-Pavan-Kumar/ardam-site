@@ -1,0 +1,212 @@
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("assets/fonts/OverusedGrotesk-VF.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  --bg: #ffffff;
+  --soft: #f7f6f7;
+  --ink: #09090b;
+  --muted: #45454f;
+  --line: #e9e7ea;
+  /* One hue, dark to light: mixing hues is what made the first version look cheap. */
+  --ruby-950: #2a0410;
+  --ruby-800: #5e0a26;
+  --ruby-700: #7a0c2d;
+  --ruby-600: #9c1038;
+  --ruby-500: #d42e5b;
+  --ruby-300: #f58ca6;
+  --ruby-100: #fbeaef;
+  --on-ruby: #ffffff;
+  --on-ruby-soft: #e8c4cf;
+  --margin: clamp(20px, 4vw, 48px);
+  --gap: clamp(96px, 12vw, 176px);
+  --radius: 20px;
+  --font: "Overused Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Seven sizes and no more: near-duplicates are what made the hierarchy feel loose. */
+  --t-display: clamp(46px, 8vw, 116px);
+  --t-h2: clamp(38px, 5vw, 68px);
+  --t-h3: clamp(26px, 2.6vw, 34px);
+  --t-title: 24px;
+  --t-lead: clamp(18px, 1.5vw, 21px);
+  --t-body: 18px;
+  --t-small: 15px;
+  --head-gap: clamp(32px, 4vw, 56px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Jump links must land below the fixed nav, not under it. */
+[id] {
+  scroll-margin-top: 96px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--t-body)/1.55 var(--font);
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 12px;
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ruby-600);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--ruby-600);
+  color: var(--on-ruby);
+  font-weight: 600;
+  font-size: var(--t-body);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 240ms var(--ease),
+    background-color 240ms var(--ease);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background: var(--ruby-700);
+    transform: translateY(-2px);
+  }
+
+  .button--light:hover {
+    background: var(--ruby-100);
+  }
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button--light {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* Navigation stays out of the way until the opening scene has been seen. */
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Same left and right edge as the content below, at every width. */
+  padding: 8px max(var(--margin), calc((100% - 1200px) / 2 + var(--margin)));
+  color: var(--on-ruby);
+  transition:
+    background-color 300ms var(--ease),
+    color 300ms var(--ease),
+    opacity 300ms var(--ease),
+    transform 300ms var(--ease);
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 800;
+  font-size: var(--t-title);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.nav__logo {
+  width: 26px;
+  height: 29px;
+}
+
+.nav .button {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: var(--t-small);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.stage-live .nav:not(.is-on) {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+}
+
+.nav.is-solid {
+  background: rgb(255 255 255 / 0.92);
+  backdrop-filter: blur(16px);
+  color: var(--ink);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.nav.is-solid .button {
+  background: var(--ruby-600);
+  color: var(--on-ruby);
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ardam.thesurfboard.in/sitemap.xml
