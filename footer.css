@@ -158,6 +158,8 @@
   text-align: center;
   white-space: nowrap;
   user-select: none;
+  /* The 0.82 line height lets the glyph box overlap the links on wide screens; decoration must not eat their clicks. */
+  pointer-events: none;
   animation: mark-flows 12s ease-in-out infinite alternate;
 }
 
